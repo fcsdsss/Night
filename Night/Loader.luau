@@ -77,21 +77,16 @@ if NightInit then
     getgenv().NightInit = nil
 end
 
--- 这里是关键的改动部分
 if Night.Premium then
     if Night.Dev and isfile("Night/Premium/Init.lua") then
         loadstring(readfile("Night/Premium/Init.lua"))()
     else
-        -- 如果您有Premium版本，也需要修改这里的URL
         loadstring(game:HttpGet("https://raw.githubusercontent.com/fcsdsss/Night/refs/heads/main/Night/Premium/Init.lua"))()
     end
 else
     if Night.Dev and isfile("Night/Library/Init.lua") then
         loadstring(readfile("Night/Library/Init.lua"))()
     else
-        -- 主要改动：下面的 URL 已被替换为您自己 Fork 仓库的地址。
-        -- 原地址是：.../null-wtf/Night/...
-        -- 新地址是：.../fcsdsss/Night/...
         loadstring(game:HttpGet("https://raw.githubusercontent.com/fcsdsss/Night/refs/heads/main/Night/Library/Init.lua"))()
     end
 end
@@ -139,7 +134,7 @@ if GameConfig == "no file" then
     Assets.Config.Save(tostring(Night.GameSave), getgenv().Night.Config.Game)
 end
 
--- Assets.Main.Load("Universal")
+Assets.Main.Load("Universal")
 Assets.Main.Load(getgenv().Night.GameSave)
 Assets.Main.ToggleVisibility(true)
 
@@ -234,4 +229,5 @@ end)
 
 Night.Loaded = true
 return Assets.Main
+
 
