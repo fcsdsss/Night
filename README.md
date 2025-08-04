@@ -5,7 +5,7 @@
 # Loadstring
 
 ```lua
-loadstring(game:HttpGet("https://raw.githubusercontent.com/null-wtf/Night/refs/heads/main/Night/Loader.luau"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/FCDSSS/Night/refs/heads/main/Night/Loader.luau"))()
 ```
 
 # The Night Project
