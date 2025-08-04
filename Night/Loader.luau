@@ -1,4 +1,3 @@
-
 if not game:IsLoaded() then
     game.Loaded:Wait()
 end
@@ -78,17 +77,22 @@ if NightInit then
     getgenv().NightInit = nil
 end
 
+-- 这里是关键的改动部分
 if Night.Premium then
     if Night.Dev and isfile("Night/Premium/Init.lua") then
         loadstring(readfile("Night/Premium/Init.lua"))()
     else
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/null-wtf/Night/refs/heads/main/Night/Premium/Init.lua"))()
+        -- 如果您有Premium版本，也需要修改这里的URL
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/fcsdsss/Night/refs/heads/main/Night/Premium/Init.lua"))()
     end
 else
     if Night.Dev and isfile("Night/Library/Init.lua") then
         loadstring(readfile("Night/Library/Init.lua"))()
     else
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/null-wtf/Night/refs/heads/main/Night/Library/Init.lua"))()
+        -- 主要改动：下面的 URL 已被替换为您自己 Fork 仓库的地址。
+        -- 原地址是：.../null-wtf/Night/...
+        -- 新地址是：.../fcsdsss/Night/...
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/fcsdsss/Night/refs/heads/main/Night/Library/Init.lua"))()
     end
 end
 
@@ -160,6 +164,7 @@ if queue_on_teleport then
                 TeleportData = string.sub(TeleportData, 0, #TeleportData-2).."}\n"
             end
 
+            -- 这里的传送重载逻辑也已更新
             if Night.Premium then
                 TeleportData = TeleportData..[[
                     if not game:IsLoaded() then
@@ -169,7 +174,7 @@ if queue_on_teleport then
                     if getgenv().NightInit and getgenv().NightInit.Dev and isfile("Night/Premium/Loader.lua") then
                         loadstring(readfile("Night/Premium/Loader.lua"))()
                     else
-                        loadstring(game:HttpGet("https://raw.githubusercontent.com/null-wtf/Night/refs/heads/main/Night/Premium/Loader.lua"))()
+                        loadstring(game:HttpGet("https://raw.githubusercontent.com/fcsdsss/Night/refs/heads/main/Night/Premium/Loader.lua"))()
                     end
                 ]]
             else
@@ -181,7 +186,7 @@ if queue_on_teleport then
                     if getgenv().NightInit and getgenv().NightInit.Dev and isfile("Night/Loader.lua") then
                         loadstring(readfile("Night/Loader.lua"))()
                     else
-                        loadstring(game:HttpGet("https://raw.githubusercontent.com/null-wtf/Night/refs/heads/main/Night/Loader.luau"))()
+                        loadstring(game:HttpGet("https://raw.githubusercontent.com/fcsdsss/Night/refs/heads/main/Night/Loader.luau"))()
                     end
                 ]]
             end
