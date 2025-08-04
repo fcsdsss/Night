@@ -139,7 +139,7 @@ if GameConfig == "no file" then
     Assets.Config.Save(tostring(Night.GameSave), getgenv().Night.Config.Game)
 end
 
-Assets.Main.Load("Universal")
+-- Assets.Main.Load("Universal")
 Assets.Main.Load(getgenv().Night.GameSave)
 Assets.Main.ToggleVisibility(true)
 
@@ -234,3 +234,4 @@ end)
 
 Night.Loaded = true
 return Assets.Main
+
