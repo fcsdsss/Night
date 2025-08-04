@@ -1188,7 +1188,7 @@ do
 
         local TEXT_SIZE = if Night.Mobile then 16 else 24
         
-        local download = Assets.Font.Download("Product-Sans-Regular", "https://github.com/null-wtf/Night/raw/refs/heads/main/Night/Assets/Fonts/Product-Sans-Regular.ttf")
+        local download = Assets.Font.Download("Product-Sans-Regular", "https://github.com/fcsdsss/Night/raw/refs/heads/main/Night/Assets/Fonts/Product-Sans-Regular.ttf")
         if not download then
             return 
         end
@@ -4784,11 +4784,11 @@ do
             end})
 
 
-            Assets.Functions.LoadFile("Night/Games/"..file..".lua", "https://raw.githubusercontent.com/null-wtf/Night/refs/heads/main/Night/Games/"..file..".lua")
+            Assets.Functions.LoadFile("Night/Games/"..file..".lua", "https://raw.githubusercontent.com/fcsdsss/Night/refs/heads/main/Night/Games/"..file..".lua")
             Assets.Config.Load(file, "Game")
             return {Background = Night.Background, Dashboard = Night.Dashboard, Settings = Settings}
         else
-            Assets.Functions.LoadFile("Night/Games/"..file..".lua", "https://raw.githubusercontent.com/null-wtf/Night/refs/heads/main/Night/Games/"..file..".lua")
+            Assets.Functions.LoadFile("Night/Games/"..file..".lua", "https://raw.githubusercontent.com/fcsdsss/Night/refs/heads/main/Night/Games/"..file..".lua")
             Assets.Config.Load(Night.GameSave, "Game")
             return {Background = Night.Background, Dashboard = Night.Dashboard}
         end
